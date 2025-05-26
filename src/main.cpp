@@ -1,3 +1,17 @@
+/*
+              _ _______
+    /\        | |__   __|
+   /  \   _ __| |_ | | ___  ___
+  / /\ \ | '__| __|| |/ _ \/ __|
+ / ____ \| |  | |_ | |  __/ (__
+/_/    \_\_|   \__||_|\___|\___|
+
+CARTOGRAFÍAS SONORAS
+Honorino García Mayo 2025
+
+Panel Gestión GRAIN DURATION
+*/
+
 #include <Arduino.h>
 #include "potenciometro.h"
 #include "pantalla.h"
@@ -19,6 +33,7 @@ void setup() {
   lcd.clear();
   delay(100);
 
+  //Caracteres Fijos en Pantalla
   lcd.createChar(7, gauge_empty);   // middle empty gauge
   lcd.createChar(1, gauge_fill_1);  // filled gauge - 1 column
   lcd.createChar(2, gauge_fill_2);  // filled gauge - 2 columns
@@ -28,6 +43,7 @@ void setup() {
   lcd.backlight();                  // enable backlight for the LCD module
   delay(100);
 
+  //Suabizado Lecturas Potenciómetros
   resposivePot = ResponsiveAnalogRead(PotGrain_dur, true, snapMultipler);
 }
 
